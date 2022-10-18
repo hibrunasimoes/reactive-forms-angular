@@ -1,59 +1,74 @@
-<main class="container mt-5" [formGroup]="formulario"> 
+<!-- <main class="container mt-5" > 
   <h1>Cadastro</h1>
   <form class="row g-3">
     <div class="col-md-6">
-      <label for="inputName" class="form-label">Nome</label>
-      <input [FormControl] = "name"type="name" class="form-control" id="inputName">
+      <label for="name" class="form-label">Nome</label>
+      <input [formControl]="nome" type="text" class="form-control" >
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Sobrenome</label>
-      <input type="password" class="form-control" id="inputPassword4">
+      <label for="sobrenome" class="form-label">Sobrenome</label>
+      <input [formControl]="sobrenome" type="text" class="form-control" >
     </div>
     <div class="col-12">
-      <label for="inputAddress" class="form-label">Email</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="exemplo@gmail.com">
+      <label for="email" class="form-label">Email</label>
+      <input [formControl]="email" type="text" class="form-control" placeholder="exemplo@gmail.com">
     </div>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Senha</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <label for="senha" class="form-label">Senha</label>
+      <input [formControl]="senha" type="text" class="form-control">
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Idade</label>
-      <input type="password" class="form-control" id="inputPassword4">
+      <label for="idade" class="form-label">Idade</label>
+      <input [formControl]="idade"type="text" class="form-control">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Mora em qual Região de Santa Catarina?</label>
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Selecione uma opção</option>
-        <option value="1">Sim</option>
-        <option value="2">Nao</option>
+      <label class="form-label">Mora na região de Santa Catarina?</label>
+      <select formControlName="moraEmSC" class="form-select" aria-label="Default select example">
+        <option selected disabled>Selecione uma opção</option>
+        <option value="sim">Sim</option>
+        <option value="não">Não</option>
       </select>
     </div>
     <label for="exampleFormControlInput1" class="form-label">Quais tecnologias já estudou?</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <input class="form-check-input" type="checkbox" [formControl]="tecnologias" >
       <label class="form-check-label" for="flexRadioDefault1"> Angular
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <input class="form-check-input" type="checkbox" [formControl]="tecnologias" >
       <label class="form-check-label" for="flexRadioDefault1"> Javascrip
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+      <input class="form-check-input" type="checkbox" [formControl]="tecnologias" >
       <label class="form-check-label" for="flexRadioDefault2"> Docker
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-      <label class="form-check-label" for="flexRadioDefault2"> .NET
+      <input class="form-check-input" type="checkbox" [formControl]="tecnologias" >
+      <label class="form-check-label"> .NET
       </label>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="submit" class="btn green">Enviar</button>
+      <button type="submit" (click)="mostraValor() " class="btn green">Enviar</button>
     </div>
-    <!-- <app-form-debug [form]="formulario"></app-form-debug> -->
 
   </form>
-</main>
+</main> -->
+
+<div [formGroup]="compra">>
+  <label>Produto </label>
+  <input type="text" formControlName="produto" />
+  <label for="street">Quantidade </label>
+  <input type="text" formControlName="quantidade" />
+  <div formGroupName="address">
+    <h2>Address</h2>
+    <label for="street">Street: </label>
+    <input type="text" formControlName="rua" />
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="submit" (click)="mostraValor() " class="btn green">Enviar</button>
+  </div>
+
+</div>

@@ -1,0 +1,225 @@
+<!-- RESOLVENDO O EXERCÍCIO DO SLIDE 08 - AULA 02 -->
+
+<!-- template pronto do site https://getbootstrap.com/docs/5.2/examples/checkout/ -->
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Checkout form</h2>
+      <p class="lead">
+        Below is an example form built entirely with Bootstrap’s form controls.
+        Each required form group has a validation state that can be triggered by
+        attempting to submit the form without completing it.
+      </p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-12">
+        <h4 class="mb-3">Billing address</h4>
+        <!-- A tag form engloba desde o primeiro campo (First Name) ate o ultimo campo do formulário, por isso ele será o nosso formGroup pai -->
+        <!-- A diretiva [formGroup] serve para indicar o grupo de formulário pai (nesse caso o formPurchase que é declarado no component.ts)  -->
+        <form class="needs-validation" [formGroup]="formPurchase">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">First name</label>
+              <!-- cada campo de formulário possui o atributo formControlName pois ele indica um controlador do grupo formPurchase -->
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                formControlName="firstName"
+              />
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Last name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                formControlName="lastName"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Username"
+                  formControlName="username"
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label"
+                >Email <span class="text-muted">(Optional)</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="you@example.com"
+                formControlName="email"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="1234 Main St"
+                formControlName="address"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label"
+                >Address 2 <span class="text-muted">(Optional)</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="address2"
+                placeholder="Apartment or suite"
+                formControlName="address2"
+              />
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Country</label>
+              <select
+                formControlName="country"
+                class="form-select"
+                id="country"
+              >
+                <option value="">Choose...</option>
+                <option value="EUA">United States</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <select formControlName="state" class="form-select" id="state">
+                <option value="">Choose...</option>
+                <option value="California">California</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input
+                type="text"
+                class="form-control"
+                id="zip"
+                formControlName="zip"
+              />
+            </div>
+          </div>
+
+          <h4 class="mb-3">Payment</h4>
+
+          <!-- Como foi pedido no exercício o setor de pagamento seria dividido para um subgrupo do formulário formPurchase -->
+          <!-- O atributo formGroupName indica que há um subgrupo do grupo pai (indicado pela diretiva [formGroup]) -->
+          <div formGroupName="formPayment">
+            <div class="my-3">
+              <div class="form-check">
+                <!-- A partir dai todos os formControlName internos ao container da linha 127 será um controlador do subgrupo formPayment -->
+                <input
+                  id="credit"
+                  name="paymentMethod"
+                  type="radio"
+                  value="credit"
+                  class="form-check-input"
+                  formControlName="paymentMethod"
+                />
+                <label class="form-check-label" for="credit">Credit card</label>
+              </div>
+              <div class="form-check">
+                <input
+                  id="debit"
+                  name="paymentMethod"
+                  type="radio"
+                  value="debit"
+                  class="form-check-input"
+                  formControlName="paymentMethod"
+                />
+                <label class="form-check-label" for="debit">Debit card</label>
+              </div>
+              <div class="form-check">
+                <input
+                  id="paypal"
+                  name="paymentMethod"
+                  type="radio"
+                  value="paypal"
+                  class="form-check-input"
+                  formControlName="paymentMethod"
+                />
+                <label class="form-check-label" for="paypal">PayPal</label>
+              </div>
+            </div>
+
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Name on card</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-name"
+                  formControlName="cardName"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label"
+                  >Credit card number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-number"
+                  formControlName="cardNumber"
+                />
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-expiration" class="form-label">Expiration</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-expiration"
+                  formControlName="cardExpiration"
+                />
+              </div>
+
+              <div class="col-md-3">
+                <label for="cc-cvv" class="form-label">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-cvv"
+                  formControlName="cvv"
+                />
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4" />
+
+          <button
+            class="w-100 btn btn-primary btn-lg"
+            type="submit"
+            (click)="showObject()"
+          >
+            Send object to console 
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>

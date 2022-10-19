@@ -1,0 +1,29 @@
+<div class="container my-4">
+  <form [formGroup]="compra" class="row">
+    <div class="col-6 mb-3">
+      <label class="form-label">Nome</label>
+      <input formControlName="nome" type="text" class="form-control" />
+    </div>
+    <div class="col-6 mb-3">
+      <label class="form-label">Idade</label>
+      <input formControlName="idade" type="text" class="form-control" />
+    </div>
+    <div class="col-6 mb-3">
+      <label class="form-label">CPF</label>
+      <input formControlName="cpf" type="text" class="form-control" />
+    </div>
+    <div class="col-6 mb-3">
+      <label class="form-label">Número do cartão</label>
+      <input formControlName="cartaoCredito" type="text" class="form-control" />
+    </div>
+    <div class="col-6 mb-3">
+      <label class="form-label">CVV</label>
+      <input formControlName="cvv" type="text" class="form-control" />
+    </div>
+    <div class="col-12 mt-2">
+      <button [disabled]="compra.invalid" (click)="showResults()" type="submit" class="btn btn-secondary">
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>

@@ -5,11 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { ValidationComponent } from './validation/validation.component';
+import { Ex03Component } from './ex03/ex03.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormBuilderComponent, 
+    FormBuilderComponent,
+    ValidationComponent,
+    Ex03Component, 
   ],
   imports: [
     BrowserModule,

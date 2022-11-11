@@ -57,7 +57,7 @@
   </form>
 </main> -->
 
-<div [formGroup]="compra">>
+<!-- <div [formGroup]="compra">>
   <label>Produto </label>
   <input type="text" formControlName="produto" />
   <label for="street">Quantidade </label>
@@ -71,4 +71,118 @@
     <button type="submit" (click)="mostraValor() " class="btn green">Enviar</button>
   </div>
 
+</div> -->
+
+
+<div class="input-container">
+  <h1>Login</h1>
+  <form [formGroup]="form">
+    <div class="form-group">
+      <div>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        required
+      />
+    </div>
+      <!-- <div *ngIf="notEmail">
+        <div class="alert alert-danger">Email is required</div>
+      </div> -->
+      <!-- <label for="password">Senha</label>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        formControlName="password"
+        (keyup)="validatePassword()"
+        required
+      /> -->
+
+      <!-- <div *ngIf="notPassword">
+        <div class="alert alert-danger">
+          Password is required and must be at least 8 characters
+        </div>
+      </div> -->
+      <!-- <p>Não possui o cadastro?</p>
+      <a href="">Cadastre-se aqui!</a> -->
+    </div>
+  </form>
+
+  <div class="container">
+    <!-- Vertically centered scrollable modal -->
+    <a
+      href=""
+      class="teste"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      data-bs-whatever="@mdo"
+    >
+      Esqueci minha senha
+    </a>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Digite seu email
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <p>
+                Será enviado um token para redefinição de senha para o email
+                digitado abaixo
+              </p>
+              <div class="mb-3">
+                <label for="forgetEmail" class="col-form-label"
+                  >Digite seu email:</label
+                >
+                <input
+                  formControlName="forgetEmail"
+                  type="email"
+                  class="form-control"
+                  id="forgetEmail"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-primary">Enviar token</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 
+  <button
+    class="btn btn-primary"
+    (click)="submitLogin()"
+    [disabled]="!form.valid"
+    type="submit"
+  >
+    Entrar
+  </button> -->
 </div>

@@ -8,7 +8,7 @@ import { Console } from 'console';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'forms';
+  // title = 'forms';
   // nome = new FormControl("oi")
   // sobrenome = new FormControl()
   // email = new FormControl()
@@ -17,21 +17,29 @@ export class AppComponent implements OnInit {
   // tecnologias = new FormControl()
   // moraEmSC = new FormControl()
   
-  compra = new FormGroup({
-    quantidade: new FormControl(),
-    produto: new FormControl(),
-    address: new FormGroup({
-      rua: new FormControl("rua albano fragoso"),
-      NumeroCasa: new FormControl(),
-      bairro: new FormControl(),
-      cidade: new FormControl(),
-    })
+  // compra = new FormGroup({
+  //   quantidade: new FormControl(),
+  //   produto: new FormControl(),
+  //   address: new FormGroup({
+  //     rua: new FormControl("rua albano fragoso"),
+  //     NumeroCasa: new FormControl(),
+  //     bairro: new FormControl(),
+  //     cidade: new FormControl(),
+  //   })
+  // })
+
+  form = new FormGroup({
+
+    email: new FormControl()
+
   })
+
+
 
   // constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(){
-    console.log(this.compra)
+    // console.log(this.compra)
     }
     mostraValor(){
     } 

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ValidationComponent } from './validation/validation.component';
 import { Ex03Component } from './ex03/ex03.component';
+import { CamilaTesteComponent } from './camila-teste/camila-teste.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormBuilderComponent,
     ValidationComponent,
-    Ex03Component, 
+    Ex03Component,
+    CamilaTesteComponent, 
   ],
   imports: [
     BrowserModule,
